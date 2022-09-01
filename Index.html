@@ -1,0 +1,328 @@
+<html>  
+  
+   
+    <head>
+        <title>Friend</title>
+    </head>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+
+    <!-- Slider CSS -->
+    <style>
+        .slidecontainer {
+          width: 100%;
+        }
+        
+        .slider {
+          -webkit-appearance: none;
+          width: 90%;
+          height: 15px;
+          border-radius: 5px;
+          background: #d3d3d3;
+          outline: none;
+          opacity: 0.7;
+          -webkit-transition: .2s;
+          transition: opacity .2s;
+        }
+        
+        .slider:hover {
+          opacity: 1;
+        }
+        
+        .slider::-webkit-slider-thumb {
+          -webkit-appearance: none;
+          appearance: none;
+          width: 25px;
+          height: 25px;
+          border-radius: 50%;
+          background: hsl(345deg 100% 47%);
+          cursor: pointer;
+        }
+        
+        .slider::-moz-range-thumb {
+          width: 25px;
+          height: 25px;
+          border-radius: 50%;
+          background: hsl(345deg 100% 47%);
+          cursor: pointer;
+        }
+    </style>
+
+
+        
+    <body>
+        <h1>Please Fillout This Form</h1>
+        <form>
+            <label for="fname" class="header">First name:</label><br>
+            <input type="text" id="fname" name="fname"><br>
+            <label for="lname" class="header">Last name:</label><br>
+            <input type="text" id="lname" name="lname"> <br><br>
+            
+            <p class="header">Gender:</p>
+            <input type="radio" id="Male" name="gender" value="Male">
+            <label for="Male">Male</label>
+            <input type="radio" id="Female" name="gender" value="Female">
+            <label for="Female">Female</label>
+            <input type="radio" id="Helicopter" name="gender" value="Helicopter">
+            <label for="Helicopter">Helicopter</label>
+            <input type="radio" id="Other" name="gender" value="Other">
+            <label for="Other">Other</label><br><br><br><br>
+
+
+            <label for="phno" class="header">Type the first two numbers of your phone number:</label><br>
+            <input type="text" id="phno" name="phno" maxlength="2"><br>
+
+            <div class="slidecontainer">
+                <p>Phone Number: <span id="phnoo"></span><span id="demo"></span></p>
+                 
+
+                <input type="range" min="00000000" max="99999999" value="0" class="slider" id="myRange">
+            </div>
+
+            <script>
+                var slider = document.getElementById("myRange");
+                var output = document.getElementById("demo");
+                output.innerHTML = slider.value;
+        
+                slider.oninput = function() {
+                    output.innerHTML = this.value;
+
+                }
+
+                var input = document.getElementById("phno")
+                var numbers = document.getElementById("phnoo")
+                numbers.innerHTML = input.value;
+                input.oninput = function() {
+                    numbers.innerHTML = this.value;
+
+                }
+
+                
+            </script>
+            <br><br><br>
+            <p class="header">Enter Your Birthday:</p>
+            <div class="column">
+              
+              
+              <div class="row">
+                  <div class="two columns">
+                      <label>Day: </label>
+                      <select id="daySelect" class="u-full-width">
+                          <script>
+                              for (let i = 1; i <= 31; i++) {
+                                  document.write("<option value='" + i + "'>" + i + "</option>")
+                              }
+                          </script>
+                      </select>
+                  </div>
+                  <div class="three columns">
+                      <label>Month: </label>
+                      <select id="monthSelect" class="u-full-width">                          
+                          <option value="2">February</option>
+                          <option value="7">July</option>
+                          <option value="3">March</option>  
+                          <option value="9">September</option>                        
+                          <option value="5">May</option>
+                          <option value="6">June</option>
+                          <option value="12">December</option>                          
+                          <option value="8">August</option>                          
+                          <option value="10">October</option>
+                          <option value="1">January</option>
+                          <option value="11">November</option>
+                          <option value="4">April</option>                          
+                      </select>
+                  </div>
+                  <div class="three columns">
+                      <label>Year: </label>
+                      <select id="yearSelect" class="u-full-width">
+                          <script>
+                              for (let i = -9999; i <= 9999; i++) {
+                                  document.write("<option value='" + i + "'>" + Math.abs(i) + (i < 0 ? " b.c." : "") + "</option>")
+                              }
+                          </script>
+                      </select>
+                  </div>
+              </div>
+              
+              <script>
+                  global.randomizeChildren("#daySelect");
+                  global.randomizeChildren("#monthSelect");
+              </script>
+              
+          </div>
+              <br><br><br><br>
+              
+      
+              </main>
+            </div>
+            <br><br>
+            <button type= "button" class="pushable" id="submit">
+            <span class="shadow"></span>
+            <span class="edge"></span>
+            <span class="front">
+              Submit
+            </span>
+          </button>
+            <script>
+              var submit = document.getElementById("submit");                         
+              submit.onclick = function() {
+              window.alert("Your a Loser");
+              }                                               
+              </script>
+              
+        </form>
+        
+        
+    </body>
+    <style>
+        h1{
+            font-family: 'Montserrat';
+            font-weight: bold;
+            font-size: 900%;
+            text-transform: uppercase;
+            text-align: center;
+        }
+        form{
+            
+            margin: 50px;
+            padding: 12px;
+            
+
+        }
+        label{
+            font-family: Montserrat; 
+            font-weight: bold;
+
+            font-size: 20;
+            text-transform: uppercase;
+        }
+        p{
+            font-family: Montserrat;
+            font-size: 20;
+            text-transform: uppercase;
+            font-weight: bold;
+            
+
+        }
+        body {
+            background-color: #5252d4;
+            background-image: linear-gradient(to bottom left, #7575dd, #5252d4);
+            text-align: center;
+            color: white;
+        }
+        input{
+            font-family: Montserrat; 
+            font-size: 20;
+            font-weight: bold;
+
+        }
+        p.header{
+          font-size: 30;
+        }
+        label.header{
+          font-size: 30;
+        }
+
+
+        
+    </style>
+
+    <!--CSS for the Button--> 
+    <style> 
+        button{
+            font-weight: bold;
+            font-family: Montserrat; 
+        }
+        .pushable {
+          position: relative;
+          border: none;
+          background: transparent;
+          padding: 0;
+          cursor: pointer;
+          outline-offset: 4px;
+          transition: filter 250ms;
+        }
+        .shadow {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border-radius: 12px;
+          background: hsl(0deg 0% 0% / 0.25);
+          will-change: transform;
+          transform: translateY(2px);
+          transition:
+            transform
+            600ms
+            cubic-bezier(.3, .7, .4, 1);
+        }
+        .edge {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border-radius: 12px;
+          background: linear-gradient(
+            to left,
+            hsl(340deg 100% 16%) 0%,
+            hsl(340deg 100% 32%) 8%,
+            hsl(340deg 100% 32%) 92%,
+            hsl(340deg 100% 16%) 100%
+          );
+        }
+        .front {
+          display: block;
+          position: relative;
+          padding: 12px 42px;
+          border-radius: 12px;
+          font-size: 1.25rem;
+          color: white;
+          background: hsl(345deg 100% 47%);
+          will-change: transform;
+          transform: translateY(-4px);
+          transition:
+            transform
+            600ms
+            cubic-bezier(.3, .7, .4, 1);
+        }
+        .pushable:hover {
+          filter: brightness(110%);
+        }
+        .pushable:hover .front {
+          transform: translateY(-6px);
+          transition:
+            transform
+            250ms
+            cubic-bezier(.3, .7, .4, 1.5);
+        }
+        .pushable:active .front {
+          transform: translateY(-2px);
+          transition: transform 34ms;
+        }
+        .pushable:hover .shadow {
+          transform: translateY(4px);
+          transition:
+            transform
+            250ms
+            cubic-bezier(.3, .7, .4, 1.5);
+        }
+        .pushable:active .shadow {
+          transform: translateY(1px);
+          transition: transform 34ms;
+        }
+        .pushable:focus:not(:focus-visible) {
+          outline: none;
+        }
+        
+      </style>
+  
+    
+      <script>
+        onauxclick = function(){
+          window.alert("No Right Clicking");
+
+        }
+      </script>
+
+</html>
